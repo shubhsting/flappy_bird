@@ -37,10 +37,7 @@ def welcomeScreen():
             elif event.type == KEYDOWN and (event.key == K_SPACE or event.key == K_UP):
                 return
             else:
-                SCREEN.blit(GAME_SPRITES['background'], (0, 0))
-                SCREEN.blit(GAME_SPRITES['player'], (playerx, playery))
-                SCREEN.blit(GAME_SPRITES['message'], (messagex, messagey))
-                SCREEN.blit(GAME_SPRITES['base'], (basex, GROUNDY))
+                SCREEN.blit(GAME_SPRITES['message'], (0, 0))
                 pygame.display.update()
                 FPSCLOCK.tick(FPS)
 
@@ -56,7 +53,8 @@ def mainGame():
     newPipe2 = getRandomPipe()
 
     # my List of upper pipes
-    upperPipes = [
+    upperPipes\
+        = [
         {'x': SCREENWIDTH + 200, 'y': newPipe1[0]['y']},
         {'x': SCREENWIDTH + 200 + (SCREENWIDTH / 2), 'y': newPipe2[0]['y']},
     ]
@@ -186,7 +184,7 @@ if __name__ == "__main__":
     # This will be the main point from where our game will start
     pygame.init()  # Initialize all pygame's modules
     FPSCLOCK = pygame.time.Clock()
-    pygame.display.set_caption('Flappy Bird by CodeWithHarry')
+    pygame.display.set_caption('Flappy Bird by Shubham')
     GAME_SPRITES['numbers'] = (
 
         pygame.image.load('0.png').convert_alpha(),
